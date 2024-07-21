@@ -8,31 +8,64 @@
     <link href="/style.css" rel="stylesheet">
     <link rel="icon" href="https://raw.githubusercontent.com/ImranR98/Obtainium/main/assets/graphics/icon_small.png">
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f8f9fa;
+        html, body {
+            height: 100%;
         }
+
+        /* Generic styles */
+
+        :root {
+            /* Color values are computed with flutter/material.dart, using default Obtainium color #6438b5
+               ColorScheme.fromSeed(seedColor: Color(0xFF6438B5)) */
+            --bs-body-color: #1d1b20;            /* ColorScheme#onSurface */
+            --bs-body-bg: #fef7ff;               /* ColorScheme#surface */
+            --bs-border-color: #cbc4cf;          /* ColorScheme#outlineVariant */
+            --bs-primary: #6438b5;
+            --color-on-primary: #fff;            /* ColorScheme#onPrimary */
+            --bs-primary-bg-subtle: #eaddff;     /* ColorScheme#primaryContainer */
+            --bs-primary-border-subtle: rgba(100, 56, 181, 0.25); /* Primary at 0.25 opacity */
+            --bs-primary-text-emphasis: #220f46; /* ColorScheme#onPrimaryContainer */
+            --bs-danger: #ba1a1a;                /* ColorScheme#error */
+            --bs-danger-bg-subtle: #ffdad6;      /* ColorScheme#errorContainer */
+            --bs-danger-border-subtle: rgba(186, 26, 26, 0.25); /* Danger at 0.25 opacity */
+            --bs-danger-text-emphasis: #410002;  /* ColorScheme#onErrorContainer */
+            --bs-info: var(--bs-primary);
+            --bs-info-bg-subtle: var(--bs-primary-bg-subtle);
+            --bs-info-border-subtle: var(--bs-primary-border-subtle);
+            --bs-info-text-emphasis: var(--bs-primary-text-emphasis);
+        }
+
         .btn-primary {
-            background-color: #007bff;
-            border-color: #007bff;
-            color: #fff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            --bs-btn-color: var(--color-on-primary);
+            --bs-btn-bg: var(--bs-primary);
+            --bs-btn-border-color: var(--bs-primary-border-subtle);
+            --bs-btn-hover-color: var(--color-on-primary);
+            --bs-btn-hover-bg: rgb(88, 49, 160); /* 5% less lightness from primary in HSL */
+            --bs-btn-hover-border-color: rgba(88, 49, 160, 0.25);
+            --bs-btn-active-color: var(--color-on-primary);
+            --bs-btn-active-bg: rgb(77, 43, 140); /* 10% less lightness from primary in HSL */
+            --bs-btn-active-border-color: rgb(77, 43, 140, 0.25);
+        }
+
+        /* Application-specific styles */
+
+        #redirectBtn {
+            --bs-btn-padding-x: 20px;
+            --bs-btn-padding-y: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
-<body>
+<body class="d-flex justify-content-center align-items-center">
     <div class="container text-center">
         <noscript>
-            <div class="alert alert-danger">Enable JavaScript in your browser to redirect to Obtainium</div>
+            <div class="alert alert-danger">Enable JavaScript in your browser to redirect to Obtainium.</div>
         </noscript>
-        <div id="error" class="alert alert-danger mt-5" hidden=""></div>
+        <div id="error" class="alert alert-danger" hidden=""></div>
         <div hidden="">
-            <div id="redirecting" class="alert alert-info mt-5 justify-content-center">
-                <p style="font-size: 20px;">Redirecting to Obtainium…</p>
-                <button id="redirectBtn" class="btn btn-primary" style="padding: 10px 20px; font-size: 18px;">Click here if you are not redirected</button>
+            <div id="redirecting" class="alert alert-info mt-5">
+                <h3 class="m-3">Redirecting to Obtainium…</h3>
+                <button id="redirectBtn" class="btn btn-primary btn-lg m-3">Click here if you are not redirected</button>
             </div>
             <div id="appLink" class="mt-5">
                 Don't have Obtainium? Visit <span id="appName">the app's</span> home page <a id="appLinkHref" href="#">here</a>.
