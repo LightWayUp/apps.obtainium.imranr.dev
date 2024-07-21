@@ -25,23 +25,24 @@
 </head>
 <body>
     <div class="container text-center">
-    <noscript>
-    Enable JavaScript in your browser to redirect to Obtainium
-    </noscript>
-        <div id="error" class="alert alert-danger mt-5" style="display: none;">
-        </div>
-        <div id="redirecting" class="alert alert-info mt-5 justify-content-center" style="display: none;">
-            <p style="font-size: 20px;">Redirecting to Obtainium…</p>
-            <button id="redirectBtn" class="btn btn-primary" style="padding: 10px 20px; font-size: 18px;">Click here if you are not redirected</button>
-        </div>
-        <div id="appLink" class="mt-5" style="display: none;">
-            Don't have Obtainium? Visit <span id="appName">the app's</span> home page <a id="appLinkHref" href="#">here</a>.
-        </div>
-        <div id="downloadLink" class="mt-5" style="display: none;">
-            OR, <a href="https://github.com/ImranR98/Obtainium/releases/latest">download Obtainium here</a>.
-        </div>
-        <div id="homeLink" class="mt-5" style="display: none;">
-            OR, <a href="/">browse the full app list here</a>.
+        <noscript>
+            Enable JavaScript in your browser to redirect to Obtainium
+        </noscript>
+        <div id="error" class="alert alert-danger mt-5" hidden=""></div>
+        <div hidden="">
+            <div id="redirecting" class="alert alert-info mt-5 justify-content-center">
+                <p style="font-size: 20px;">Redirecting to Obtainium…</p>
+                <button id="redirectBtn" class="btn btn-primary" style="padding: 10px 20px; font-size: 18px;">Click here if you are not redirected</button>
+            </div>
+            <div id="appLink" class="mt-5">
+                Don't have Obtainium? Visit <span id="appName">the app's</span> home page <a id="appLinkHref" href="#">here</a>.
+            </div>
+            <div id="downloadLink" class="mt-5">
+                OR, <a href="https://github.com/ImranR98/Obtainium/releases/latest">download Obtainium here</a>.
+            </div>
+            <div id="homeLink" class="mt-5">
+                OR, <a href="/">browse the full app list here</a>.
+            </div>
         </div>
     </div>
     <script>
